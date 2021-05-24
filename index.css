@@ -1,0 +1,119 @@
+html {
+    background-color: #f1f1f1;
+    color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+
+html, body {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li + li {
+    margin-top: 10px;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+input {
+    font-size: .8em;
+    margin-top: 5px;
+    min-height: 40px;
+    padding: 0 10px;
+}
+
+button {
+    background-color: #03a9f4;
+    border: 0;
+    font-size: .8em;
+    margin-top: 40px;
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #29b6f6;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: #039be5;
+}
+
+code {
+    background-color: #cdcdcd;
+    padding: 0 2px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field--hint {
+    font-size: .65em;
+    margin-top: 10px;
+}
+
+.dialog {
+    border: 0;
+    border-radius: 4px;
+    box-shadow: 0 0 20px #757575;
+    opacity: 0;
+    top: -100vh;
+    transform: translateY(-50%);
+    transition: top .8s ease-in-out, opacity .4s .6s ease-in-out;
+    padding: 40px;
+}
+
+.dialog.open {
+    opacity: 1;
+    top: 50%;
+}
+
+.dialog--cross {
+    cursor: pointer;
+    height: 20px;
+    opacity: .3;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    transition: opacity .4s ease-in-out;
+    width: 20px;
+}
+
+.dialog--cross:hover {
+    opacity: 1;
+}
+
+.dialog--cross::before, .dialog--cross::after {
+    background-color: #333;
+    content: ' ';
+    height: 18px;
+    left: 9px;
+    position: absolute;
+    width: 2px;
+}
+
+.dialog--cross::before {
+    transform: rotate(45deg);
+}
+
+.dialog--cross::after {
+    transform: rotate(-45deg);
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <form id="sub-terra">
+        <div class="field">
+            <label for="players">Joueurs</label>
+            <input id="players" type="text" name="players" />
+            <div class="field--hint">Veuillez mettre un séparateur entre le nom des différents joueurs (<code>,</code> <code>;</code> <code>.</code>)</div>
+        </div>
+        <button type="submit">Lancer la partie</button>
+    </form>
+
+    <dialog id="dialog" class="dialog" open>
+        <div class="dialog--cross"></div>
+        <div class="dialog--content"></div>
+    </dialog>
+
+    <script src="./index.js"></script>
+</body>
+</html>
