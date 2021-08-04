@@ -65,6 +65,12 @@ code {
     flex-direction: column;
 }
 
+.field-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
 .field--hint {
     font-size: .65em;
     margin-top: 10px;

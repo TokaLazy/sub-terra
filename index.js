@@ -71,7 +71,7 @@ const hideDialog = (e) => {
 
 dialogCross.addEventListener('click', hideDialog);
 
-const randomGame2 = (playersInput) => {
+const randomGame = (playersInput) => {
     const players = generatePlayersArray(playersInput);
     const randomPlayers = getRandomArray(players.length, players);
     const randomCharacters = getRandomArray(players.length);
@@ -86,6 +86,28 @@ document.getElementById('sub-terra').addEventListener('submit', (e) => {
     e.preventDefault();
 
     const inputPlayers = e.target.elements.players.value;
+    const investigation = e.target.elements.investigation.checked;
+    const extraction = e.target.elements.extraction.checked;
+    const annihilation = e.target.elements.annihilation.checked;
+
+    const hasAgent = personnages.indexOf('Agent');
+    const hasExterminateur = personnages.indexOf('Exterminateur');
+
+    if ((investigation || extraction) && hasAgent == -1) {
+        personnages.push('Agent');
+    }
+
+    if (!(investigation || extraction) && hasAgent != -1) {
+        personnages.splice(hasAgent, 1);
+    }
+
+    if (annihilation && hasExterminateur == -1) {
+        personnages.push('Exterminateur');
+    }
+
+    if (!annihilation && hasExterminateur != -1) {
+        personnages.splice(hasExterminateur, 1);
+    }
 
     if (!inputPlayers.trim()) {
         window.alert('Il faut au minimum 2 joueurs !');
@@ -99,5 +121,5 @@ document.getElementById('sub-terra').addEventListener('submit', (e) => {
         return;
     }
 
-    randomGame2(players);
+    randomGame(players);
 });
